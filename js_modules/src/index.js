@@ -1,11 +1,11 @@
-//ES5
-// const sum = require('./sum');
+const button = document.createElement('button');
+button.innerText = 'Click me';
+button.onclick = () => {
+  System.import('./image_viewer').then(module => {
+  	// console.log('MODULE: ', module);
+  	module.default();
+  });
+  //async call to the server for this module
+};
 
-// ES6
-import sum from './sum';
-import './image_viewer';
-
-
-const total = sum(10, 5);
-console.log(total);
-
+document.body.appendChild(button);
